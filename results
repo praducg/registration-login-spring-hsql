@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<title>Spring Boot Example</title>
+<!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+</head>
+<body>
+	<div  th:object="${resultList}">
+		<select   id="testOrder" name="testOrder">
+			<option value="">Select Test Order</option>
+			<option th:each="resultList : ${resultList}" th:value="${resultList}"
+				th:text="${resultList}"></option>
+		</select>
+	</div>
+</body>
+</html>
