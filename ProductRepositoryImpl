@@ -1,0 +1,26 @@
+package com.ensat.repositories;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+
+@Repository
+@Transactional
+public class ProductRepositoryImpl implements ProductRepositoryCustom {
+	@PersistenceContext
+	private EntityManager manager;
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<String> fetchAllRelNos() {
+		Query q = manager.createNativeQuery("SELECT r.CRT_RELEASE_MASTER_REL_NUMBER from wwwdatabase.CRT_RELEASE_MASTER r");
+		List<String> employees = (List<String>) q.getResultList();
+		return employees;
+	}
+
+}
