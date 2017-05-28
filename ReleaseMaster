@@ -1,0 +1,49 @@
+package com.ensat.entities;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity 
+@Table( schema="wwwdatabase", name="CRT_RELEASE_MASTER")
+
+ 
+public class ReleaseMaster {
+
+    @Id
+  //  @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "CRT_RELEASE_MASTER_REL_NUMBER")
+    private String releaseNo;
+    @Column(name = "CRT_RELEASE_MASTER_REL_DESC")
+    private String releaseDeasc;
+    @Column(name = "CRT_RELEASE_MASTER_REL_STATUS")
+    private Integer releaseStatus;
+    @Column(name = "CRT_RELEASE_MASTER_REL_MODE")
+    private Integer releaseMode;
+	public String getReleaseNo() {
+		return releaseNo;
+	}
+	public void setReleaseNo(String releaseNo) {
+		this.releaseNo = releaseNo;
+	}
+	public String getReleaseDesc() {
+		return releaseDesc;
+	}
+	public void setReleaseDesc(String releaseDesc) {
+		this.releaseDesc = releaseDesc;
+	}
+	public Integer getReleaseStatus() {
+		return releaseStatus;
+	}
+	public void setReleaseStatus(Integer releaseStatus) {
+		this.releaseStatus = releaseStatus;
+	}
+	public Integer getReleaseMode() {
+		return releaseMode;
+	}
+	public void setReleaseMode(Integer releaseMode) {
+		this.releaseMode = releaseMode;
+	}
+    
+}
